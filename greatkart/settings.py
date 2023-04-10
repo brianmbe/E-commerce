@@ -82,7 +82,7 @@ DATABASES = {
         'USER': env('USER'),
         'PASSWORD': env('PASSWORD'),
         'HOST': env('HOST'),
-        'PORT': env('PORT'),
+        'PORT': env('PORT', cast=int),
     }
 }
 
