@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block title %}Store{% endblock title %}
 
@@ -108,7 +109,10 @@
                             </select>
                         </div>
                         </div> <!-- form-row.// -->
-                        <button class="btn btn-block btn-primary">Apply</button>
+                        <button class="btn btn-block btn-primary mb-4">Apply</button>
+                        <a href="{% url 'home' %}">
+                            <img src="{% static './images/banners/live_banner.gif' %}" class="img-fluid rounded">
+                        </a>
                     </div><!-- card-body.// -->
                 </div>
             </article> <!-- filter-group .// -->
@@ -137,11 +141,12 @@
                                 <div class="fix-height">
                                     <a href="{{product.get_absolute_url}}" class="title">{{ product.product_name }}</a>
                                     <div class="price-wrap mt-2">
-                                        <span class="price">UGX {{product.price}}</span>
+                                        <span class="price">UGX {{product.price | intcomma}}</span>
                                         <del class="price-old">$1980</del>
                                     </div> <!-- price-wrap.// -->
                                 </div>
-                                <a href="#" class="btn btn-block btn-success">Added to cart </a>
+
+                                <a href="{{product.get_absolute_url}}" class="btn btn-block btn-primary">View details</a>
                             </figcaption>
                         </figure>
                     </div> <!-- col.// -->

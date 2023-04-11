@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 
 {% block title %}Home{% endblock title %}
 
@@ -37,7 +38,7 @@
 					<a href="{{product.get_absolute_url}}" class="img-wrap"> <img src="{{product.main_picture.url}}"> </a>
 					<figcaption class="info-wrap">
 						<a href="{{product.get_absolute_url}}" class="title">{{product.product_name | title}}</a>
-						<div class="price mt-1">UGX {{product.price }}</div> <!-- price-wrap.// -->
+						<div class="price mt-1">UGX {{product.price | intcomma }}</div> <!-- price-wrap.// -->
 					</figcaption>
 				</div>
 			</div>		
@@ -53,9 +54,9 @@
 
 <div class="container mb-4">
 	<div class="intro-banner-wrap">
-	<a href="{% url 'store' %}">
-		<img src="images/banners/2.png" class="img-fluid rounded">
-	</a>
+		<a href="{% url 'store' %}">
+			<img src="images/banners/2.png" class="img-fluid rounded">
+		</a>
 	</div>
 </div> <!-- container //  -->
 

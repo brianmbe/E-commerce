@@ -27,12 +27,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'django.contrib.humanize',
 
     # my personal apps
     "home.apps.HomeConfig",
     "category.apps.CategoryConfig",
     "store.apps.StoreConfig",
     "account.apps.AccountConfig",
+    "carts.apps.CartsConfig",
 ]
 
 MIDDLEWARE = [
@@ -61,6 +63,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "category.context_processors.menu_links",
+                "carts.context_processors.cart_counter",
             ],
         },
     },
