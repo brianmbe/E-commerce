@@ -1,3 +1,4 @@
+from django.contrib.messages import constants as messages
 from pathlib import Path
 import environ
 
@@ -139,3 +140,16 @@ MEDIA_ROOT = BASE_DIR / "static/images"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# messages
+MESSAGE_TAGS = {
+    messages.ERROR: 'danger'
+}
+
+# smtp configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'briannyingosmanano@gmail.com'
+EMAIL_HOST_PASSWORD = 'mananopeter'
